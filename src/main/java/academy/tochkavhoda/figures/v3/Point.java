@@ -2,7 +2,7 @@ package academy.tochkavhoda.figures.v3;
 
 import academy.tochkavhoda.iface.v3.Movable;
 
-public class  Point implements Movable {
+public class Point implements Movable {
 
     private int x, y;
 

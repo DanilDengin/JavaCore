@@ -6,8 +6,10 @@ public interface Movable {
 
 
     void moveTo(int x, int y);
+
     default void moveTo(Point point) {
-        moveTo(point.getX(),point.getY());
+        moveTo(point.getX(), point.getY());
     }
+
     void moveRel(int dx, int dy);
 }

@@ -1,12 +1,14 @@
 package academy.tochkavhoda.school;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
-public class School  {
+public class School {
 
+    Set<Group> set = new HashSet<>();
     private String name;
     private int year;
-    Set<Group> set = new HashSet<>();
 
     public School(String name, int year) throws TrainingException {
         setYear(year);
@@ -18,7 +20,7 @@ public class School  {
     }
 
     public void setName(String name) throws TrainingException {
-        if (name==null || name.length()<2) {
+        if (name == null || name.length() < 2) {
             throw new TrainingException(TrainingErrorCode.SCHOOL_WRONG_NAME);
         }
         this.name = name;
@@ -36,42 +38,40 @@ public class School  {
         return set;
     }
 
-    public void  addGroup(Group group) throws TrainingException {
-       for (Group gr: set) {
-            if (gr.getName().compareTo(group.getName())==0) {
+    public void addGroup(Group group) throws TrainingException {
+        for (Group gr : set) {
+            if (gr.getName().compareTo(group.getName()) == 0) {
                 throw new TrainingException(TrainingErrorCode.DUPLICATE_GROUP_NAME);
             }
         }
         set.add(group);
     }
 
-    public void  removeGroup(Group group) throws TrainingException {
-        int size1= set.size();
+    public void removeGroup(Group group) throws TrainingException {
+        int size1 = set.size();
         set.remove(group);
-        int size2= set.size();
-        if (size2-size1==0) {
+        int size2 = set.size();
+        if (size2 - size1 == 0) {
             throw new TrainingException(TrainingErrorCode.GROUP_NOT_FOUND);
         }
     }
 
-    public void  removeGroup(String name) throws TrainingException {
-        int size1= set.size();
-        for (Group gr: set) {
-            if (gr.getName().compareTo(name)==0) {
+    public void removeGroup(String name) throws TrainingException {
+        int size1 = set.size();
+        for (Group gr : set) {
+            if (gr.getName().compareTo(name) == 0) {
                 set.remove(gr);
             }
         }
-         int size2= set.size();
-        if (size2-size1==0) {
+        int size2 = set.size();
+        if (size2 - size1 == 0) {
             throw new TrainingException(TrainingErrorCode.GROUP_NOT_FOUND);
         }
     }
 
-    public boolean  containsGroup(Group group) {
+    public boolean containsGroup(Group group) {
         return set.contains(group);
     }
-
-
 
 
     @Override

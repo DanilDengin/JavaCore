@@ -41,7 +41,7 @@ public class FirstSteps {
     public int mul(int[] array) {
         int mul = 1;
         if (array.length > 0) {
-           for (int i = 0; i < array.length; i++) {
+            for (int i = 0; i < array.length; i++) {
                 mul = mul * array[i];
             }
         } else {
@@ -141,9 +141,7 @@ public class FirstSteps {
     public int sum(int[][] matrix) {
         int sum = 0;
         int x = matrix.length;
-        // REVU for each
         for (int i = 0; i < x; i++) {
-            // REVU вызовите sum для линейного массива
             for (int j = 0; j < matrix[i].length; j++) {
                 sum = sum + matrix[i][j];
             }
@@ -174,7 +172,7 @@ public class FirstSteps {
         int x = matrix.length;
         if (x > 1) {
             int max = matrix[0][0];
-           for (int i = 0; i < x; i++) {
+            for (int i = 0; i < x; i++) {
                 for (int j = 0; j < matrix[i].length; j++) {
                     if (i == j && max >= matrix[i][j]) {
                         continue;

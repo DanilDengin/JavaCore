@@ -1,6 +1,5 @@
 package academy.tochkavhoda.school;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -74,14 +73,14 @@ public class Group {
                 count++;
             }
         }
-       if (count - list.size() + 1 > 0) {
+        if (count - list.size() + 1 > 0) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
         return null;
     }
 
     public Trainee getTraineeByFullName(String fullName) throws TrainingException {
-       int count = 0;
+        int count = 0;
         for (Trainee tr : list) {
             if (tr.getFullName().equals(fullName)) {
                 return list.get(count);
@@ -130,8 +129,8 @@ public class Group {
 //        }
     }
 
-    public void  rotateTraineeList(int positions) {
-        Collections.rotate(list,positions);
+    public void rotateTraineeList(int positions) {
+        Collections.rotate(list, positions);
 //        List<Trainee> list2 = new ArrayList<>();
 //        for (int i=0; i< list.size() ; i++) {
 //            int a = i+ positions;
@@ -143,32 +142,31 @@ public class Group {
 //        list=list2;
     }
 
-    public List<Trainee>  getTraineesWithMaxRating() throws TrainingException {
-        if (list.size()==0) {
+    public List<Trainee> getTraineesWithMaxRating() throws TrainingException {
+        if (list.size() == 0) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
-       this.sortTraineeListByRatingDescendant();
+        this.sortTraineeListByRatingDescendant();
         int s = list.size();
-        int count=0;
-        for (int i=1; i<s-count; i++) {
-                if (list.get(1).getRating()>list.get(i).getRating()) {
-                    list.remove(i);
-                    count++;
-                    i--;
-                }
+        int count = 0;
+        for (int i = 1; i < s - count; i++) {
+            if (list.get(1).getRating() > list.get(i).getRating()) {
+                list.remove(i);
+                count++;
+                i--;
+            }
         }
         return list;
     }
 
-    public boolean  hasDuplicates() {
-        for (int i = 1; i< list.size(); i++){
+    public boolean hasDuplicates() {
+        for (int i = 1; i < list.size(); i++) {
             if (list.get(0).equals(list.get(i))) {
                 return true;
             }
         }
         return false;
     }
-
 
 
     @Override

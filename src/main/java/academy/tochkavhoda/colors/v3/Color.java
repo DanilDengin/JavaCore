@@ -12,7 +12,6 @@ public enum Color {
         catch (IllegalArgumentException ex) {
             throw new ColorException( ColorErrorCode.WRONG_COLOR_STRING);
         }
-        // REVU не ошибка, но проще было в начале проверить на null
     }
 
 }

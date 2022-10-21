@@ -22,22 +22,22 @@ public class Trainee implements Serializable {
         return firstname;
     }
 
-    public void setFirstName(String firstName) throws TrainingException{
-        if (firstName==null || firstName.length()<1) {
+    public void setFirstName(String firstName) throws TrainingException {
+        if (firstName == null || firstName.length() < 1) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_WRONG_FIRSTNAME);
         }
-        this.firstname=firstName;
+        this.firstname = firstName;
     }
 
     public String getLastName() {
         return lastname;
     }
 
-    public void setLastName(String lastName) throws TrainingException{
-        if (lastName==null || lastName.length()<1) {
+    public void setLastName(String lastName) throws TrainingException {
+        if (lastName == null || lastName.length() < 1) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_WRONG_LASTNAME);
         }
-        this.lastname=lastName;
+        this.lastname = lastName;
     }
 
     public int getRating() {
@@ -45,14 +45,14 @@ public class Trainee implements Serializable {
     }
 
     public void setRating(int rating) throws TrainingException {
-        if (rating>5 | rating<1) {
+        if (rating > 5 | rating < 1) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_WRONG_RATING);
         }
-        this.rating=rating;
+        this.rating = rating;
     }
 
     public String getFullName() {
-        return firstname+" "+lastname;
+        return firstname + " " + lastname;
     }
 
     @Override

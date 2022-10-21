@@ -1,20 +1,23 @@
 package academy.tochkavhoda.school;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class TraineeMap {
 
     private Map<Trainee, String> map;
 
-    public TraineeMap(){
+    public TraineeMap() {
         this.map = new HashMap<>();
     }
 
     public void addTraineeInfo(Trainee trainee, String institute) throws TrainingException {
-        if (map.get(trainee)!=null) {
+        if (map.get(trainee) != null) {
             throw new TrainingException(TrainingErrorCode.DUPLICATE_TRAINEE);
         }
-        map.put(trainee,institute);
+        map.put(trainee, institute);
     }
 
     public int getTraineesCount() {
@@ -25,18 +28,18 @@ public class TraineeMap {
         if (!map.containsKey(trainee)) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
-        map.put(trainee,institute);
+        map.put(trainee, institute);
     }
 
     public void removeTraineeInfo(Trainee trainee) throws TrainingException {
-        if (map.get(trainee)==null) {
+        if (map.get(trainee) == null) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
         map.remove(trainee);
     }
 
     public String getInstituteByTrainee(Trainee trainee) throws TrainingException {
-        if (map.get(trainee)==null) {
+        if (map.get(trainee) == null) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
         return map.get(trainee);
@@ -47,8 +50,8 @@ public class TraineeMap {
     }
 
     public Set<String> getAllInstitutes() {
-         Set<String> str = new LinkedHashSet<>();
-        for (Trainee tr: map.keySet() ) {
+        Set<String> str = new LinkedHashSet<>();
+        for (Trainee tr : map.keySet()) {
             str.add(map.get(tr));
         }
         return str;

@@ -5,7 +5,9 @@ import academy.tochkavhoda.colors.v3.ColorException;
 
 public interface Colored {
 
-    void setColor(Color color) throws ColorException;
     Color getColor();
+
+    void setColor(Color color) throws ColorException;
+
     void setColor(String colorString) throws ColorException;
 }

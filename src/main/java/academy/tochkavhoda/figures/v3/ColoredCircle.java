@@ -51,16 +51,16 @@ public class ColoredCircle extends Circle implements Colored {
         this(Color.RED);
     }
 
+    public Color getColor() {
+        return color;
+    }
+
     @Override
     public void setColor(Color color) throws ColorException {
         if (color == null) {
             throw new ColorException(NULL_COLOR);
         }
-        this.color=color;
-    }
-
-    public Color getColor() {
-        return color;
+        this.color = color;
     }
 
     @Override

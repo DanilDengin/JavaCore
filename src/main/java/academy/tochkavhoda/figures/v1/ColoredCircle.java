@@ -9,15 +9,15 @@ public class ColoredCircle extends Circle {
 
     public ColoredCircle(int xCenter, int yCenter, int radius, int color) {
         super(xCenter, yCenter, radius);
-        this.color=color;
+        this.color = color;
     }
 
     public ColoredCircle(int radius, int color) {
-        this(0,0,radius,color);
+        this(0, 0, radius, color);
     }
 
     public ColoredCircle(int color) {
-        this (0,0,1,color);
+        this(0, 0, 1, color);
     }
 
     public ColoredCircle() {
@@ -29,7 +29,7 @@ public class ColoredCircle extends Circle {
     }
 
     public void setColor(int color) {
-        this.color=color;
+        this.color = color;
     }
 
     @Override

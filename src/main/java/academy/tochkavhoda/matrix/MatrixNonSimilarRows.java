@@ -7,10 +7,10 @@ public class MatrixNonSimilarRows {
 
     Set<int[]> set;
 
-    public MatrixNonSimilarRows(int[][] matrix){
+    public MatrixNonSimilarRows(int[][] matrix) {
         set = new HashSet<>();
         Set<Set<Integer>> check = new HashSet<>();
-        for (int[] array: matrix) {
+        for (int[] array : matrix) {
             Set<Integer> install = new HashSet<>();
             for (int item : array) {
                 install.add(item);

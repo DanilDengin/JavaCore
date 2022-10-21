@@ -7,23 +7,23 @@ public class ColoredRectangle extends Rectangle implements Colored {
     private int color;
 
     public ColoredRectangle(Point leftTop, Point rightBottom, int color) {
-        super (leftTop, rightBottom);
-        this.color=color;
+        super(leftTop, rightBottom);
+        this.color = color;
     }
 
     public ColoredRectangle(int xLeft, int yTop, int xRight, int yBottom, int color) {
         super(xLeft, yTop, xRight, yBottom);
-        this.color=color;
+        this.color = color;
     }
 
     public ColoredRectangle(int length, int width, int color) {
         super(length, width);
-        this.color=color;
+        this.color = color;
     }
 
     public ColoredRectangle(int color) {
         super();
-        this.color=color;
+        this.color = color;
     }
 
     public ColoredRectangle() {
@@ -35,7 +35,7 @@ public class ColoredRectangle extends Rectangle implements Colored {
     }
 
     public void setColor(int color) {
-        this.color=color;
+        this.color = color;
     }
 
     @Override

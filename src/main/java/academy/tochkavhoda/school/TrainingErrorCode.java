@@ -15,11 +15,11 @@ public enum TrainingErrorCode {
 
     private String errorCode;
 
-    TrainingErrorCode(String errorCode){
-        this.errorCode=errorCode;
+    TrainingErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public String getErrorMessage(){
+    public String getErrorMessage() {
         return errorCode;
     }
 }

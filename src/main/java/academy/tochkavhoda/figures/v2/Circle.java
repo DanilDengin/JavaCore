@@ -5,67 +5,67 @@ import academy.tochkavhoda.iface.v2.Movable;
 import academy.tochkavhoda.iface.v2.Resizable;
 
 public class Circle extends Figure implements Movable, Resizable, HasArea {
-     private int radius, xCenter, yCenter;
+    private int radius, xCenter, yCenter;
 
     public Circle(Point center, int radius) {
-        this(center.getX(),center.getY(), radius);
+        this(center.getX(), center.getY(), radius);
     }
 
     public Circle(int xCenter, int yCenter, int radius) {
-        this.xCenter=xCenter;
-        this.yCenter=yCenter;
-        this.radius=radius;
+        this.xCenter = xCenter;
+        this.yCenter = yCenter;
+        this.radius = radius;
     }
 
     public Circle(int radius) {
-        this(0,0,radius);
+        this(0, 0, radius);
     }
 
     public Circle() {
-        this(0,0,1);
+        this(0, 0, 1);
     }
 
     public Point getCenter() {
         return new Point(xCenter, yCenter);
     }
 
+    public void setCenter(Point center) {
+        xCenter = center.getX();
+        yCenter = center.getY();
+    }
+
     public int getRadius() {
         return radius;
     }
 
-    public void setCenter(Point center) {
-        xCenter=center.getX();
-        yCenter=center.getY();
-    }
-
     public void setRadius(int radius) {
-        this.radius=radius;
+        this.radius = radius;
     }
 
-    public void moveTo(int x, int y){
-        xCenter=x;
-        yCenter=y;
+    public void moveTo(int x, int y) {
+        xCenter = x;
+        yCenter = y;
     }
 
     public void moveRel(int dx, int dy) {
-        xCenter+=dx;
-        yCenter+=dy;
+        xCenter += dx;
+        yCenter += dy;
     }
 
     public void resize(double ratio) {
-        radius = (int) ( radius * ratio);
+        radius = (int) (radius * ratio);
     }
 
     public double getArea() {
-        return radius*radius*Math.PI;
+        return radius * radius * Math.PI;
     }
 
     public double getPerimeter() {
-        return 2*radius*Math.PI;
+        return 2 * radius * Math.PI;
     }
 
     public boolean isInside(int x, int y) {
-        return radius>=Math.sqrt((x-xCenter)*(x-xCenter)+(y-yCenter)*(y-yCenter));
+        return radius >= Math.sqrt((x - xCenter) * (x - xCenter) + (y - yCenter) * (y - yCenter));
     }
 
 

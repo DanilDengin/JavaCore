@@ -5,7 +5,6 @@ import academy.tochkavhoda.colors.v3.ColorErrorCode;
 import academy.tochkavhoda.colors.v3.ColorException;
 import academy.tochkavhoda.iface.v3.Colored;
 
-
 import static academy.tochkavhoda.colors.v3.ColorErrorCode.NULL_COLOR;
 
 public class ColoredRectangle extends Rectangle implements Colored {
@@ -13,22 +12,24 @@ public class ColoredRectangle extends Rectangle implements Colored {
     private Color color;
 
     public ColoredRectangle(Point leftTop, Point rightBottom, Color color) throws ColorException {
-        super (leftTop, rightBottom);
+        super(leftTop, rightBottom);
         if (color == null) {
             throw new ColorException(NULL_COLOR);
         }
-        this.color=color;
+        this.color = color;
     }
 
-    public ColoredRectangle(Point leftTop, Point rightBottom,String str) throws ColorException {
-        super(leftTop,rightBottom);
+    public ColoredRectangle(Point leftTop, Point rightBottom, String str) throws ColorException {
+        super(leftTop, rightBottom);
         setColor(str);
 
     }
+
     public ColoredRectangle(int xLeft, int yTop, int xRight, int yBottom, Color color) {
         super(xLeft, yTop, xRight, yBottom);
-        this.color=color;
+        this.color = color;
     }
+
     public ColoredRectangle(int xLeft, int yTop, int xRight, int yBottom, String str) throws ColorException {
         super(xLeft, yTop, xRight, yBottom);
         setColor(str);
@@ -36,8 +37,9 @@ public class ColoredRectangle extends Rectangle implements Colored {
 
     public ColoredRectangle(int length, int width, Color color) {
         super(length, width);
-        this.color=color;
+        this.color = color;
     }
+
     public ColoredRectangle(int length, int width, String str) throws ColorException {
         super(length, width);
         setColor(str);
@@ -48,8 +50,9 @@ public class ColoredRectangle extends Rectangle implements Colored {
         if (color == null) {
             throw new ColorException(NULL_COLOR);
         }
-        this.color=color;
+        this.color = color;
     }
+
     public ColoredRectangle(String str) throws ColorException {
         super();
         setColor(str);
@@ -69,8 +72,7 @@ public class ColoredRectangle extends Rectangle implements Colored {
             setColor(Color.valueOf(colorString));
         } catch (IllegalArgumentException ex) {
             throw new ColorException(ColorErrorCode.WRONG_COLOR_STRING);
-        }
-        catch (NullPointerException ex) {
+        } catch (NullPointerException ex) {
             throw new ColorException(ColorErrorCode.NULL_COLOR);
         }
     }
@@ -79,7 +81,7 @@ public class ColoredRectangle extends Rectangle implements Colored {
         if (color == null) {
             throw new ColorException(NULL_COLOR);
         }
-        this.color=color;
+        this.color = color;
     }
 
     @Override
